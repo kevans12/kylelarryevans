@@ -8,12 +8,23 @@ $(document).ready(function() {
 
     console.log($(window).scrollTop());
 
-    if ($(window).scrollTop() > 500) {
+    if ($(window).scrollTop() > 580) {
       $('#nav_bar').addClass('navbar-fixed-top');
     }
 
-    if ($(window).scrollTop() < 501) {
+    if ($(window).scrollTop() < 581) {
       $('#nav_bar').removeClass('navbar-fixed-top');
     }
   });
+// scrolling to anchors
+  var $root = $('html, body');
+$('a').click(function() {
+    var href = $.attr(this, 'href');
+    $root.animate({
+        scrollTop: $(href).offset().top
+    }, 700, function () {
+        window.location.hash = href;
+    });
+    return false;
+ });
 });

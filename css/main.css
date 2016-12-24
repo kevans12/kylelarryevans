@@ -31,9 +31,9 @@
 }
 
 .home-top {
-  background: url('../images/slc2.jpg') no-repeat;
+  background: url('../images/slc3.jpg') no-repeat;
   background-size: cover;
-  height: 500px;
+  height: 580px;
   width: 100%;
   /*margin-bottom: 40px;*/
   display: flex;
@@ -45,6 +45,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+/*@media(min-width: 1000px) {
+  .home-top {
+    height: 650px;
+  }
+}*/
 .home-top p {
   text-align: center;
   width: 65%;
@@ -88,16 +93,23 @@
 }
 /***************************home-about*******************************/
 .home-about {
-  height: 450px;
+  height: 600px;
   width: 100%;
   /*display: flex;*/
   /*justify-content: center;
   flex-direction: column;*/
 }
+.about-text {
+  font-size: 1.4em;
+  padding-top: 10px;
+}
 .home-about-intro {
   /*margin: 10px;*/
   padding: 10px;
+  padding-top: 40px;
   text-align: center;
+  width: 80%;
+  margin: auto;
 }
 .home-about-cards {
   display: flex;
@@ -105,11 +117,22 @@
   justify-content: center;
 }
 .about-card {
-  height: 100px;
-  width: 400px;
+  height: auto;
+  width: 410px;
   margin: 10px;
   padding: 10px;
-  background-color: gray;
+}
+.about-card h4 {
+  color: #b20000;
+}
+@media(min-width: 1000px) {
+  .about-card {
+    height: auto;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.2em;
+  }
 }
 @media(max-width: 850px) {
   .home-about-cards {
@@ -119,21 +142,40 @@
     margin: auto;
   }
   .about-card {
-    height: 100px;
+    height: 200px;
     width: 300px;
+    margin: 1px;
+    padding: 1px;
   }
   .home-about {
-    height: 600px;
+    height: auto;
+  }
+  .about-text {
+    font-size: 1.2em;
   }
 }
+@media(max-width: 400px){
+  .about-text {
+    font-size: 1.1em;
+  }
+  .about-card {
+    font-size: .9em;
+    height: auto;
+  }
+  .home-about {
+    height: auto;
+  }
+}
+
 
 /***************************home experience*******************************/
 
 .home-experience {
   background: url('../images/leaf2.jpg') no-repeat;
   background-size: cover;
-  height: 500px;
+  height: auto;
   width: 100%;
+  display: block;
   /*margin-bottom: 40px;*/
   /*display: flex;*/
   /*justify-content: center;
@@ -148,6 +190,7 @@
   color: white;
   margin:10px;
   margin-top: 20px;
+  padding-top: 40px;
 }
 .home-experience h2 {
   margin: auto;
@@ -162,19 +205,31 @@
   justify-content: center;
 }
 .experience-card {
-  width: 200px;
-  height: 300px;
+  width: 300px;
+  height: 400px;
   background-color: white;
   border-radius: 4px;
   opacity: .8;
   margin: 10px;
   padding: 10px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+}
+.experience-card ul {
+  text-align: left;
+  padding-left: 10px;
+}
+.experience-card h4 {
+  font-size: 1.1em;
+  font-weight: bold;
 }
 .experience-card img {
-  width: 100px;
+  width: 50px;
   height: auto;
   margin: auto;
+  align-self: flex-end;
 }
 /*.experience-cards div:span{
   display: none;
@@ -197,17 +252,53 @@
 .experience-card:hover h4{
   color: white;
 }
-@media(max-width: 700px) {
+@media(max-width: 900px) {
   .experience-cards {
     flex-wrap: wrap;
   }
+  .experience-card {
+    height: 300px;
+    font-size: 1em;
+  }
+  .experience-card h4 {
+    font-size: 1em;
+  }
+  .home-experience {
+    height: auto;
+  }
+}
+.libutton-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+  padding: 10px;
+}
+.linkedin-button {
+  margin: 10 auto;
+  width: 180px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  opacity: .5;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  color: #b20000;
+  font-weight: bold;
+}
+.linkedin-button:hover {
+  background-color: #b20000;
+  opacity: .5;
+  color: white;
 }
 
 /***************************home portfolio*******************************/
 
 .portfolio {
-  height: 450px;
+  height: 550px;
   width: 100%;
+  padding-top: 30px;
   /*display: flex;
   justify-content: center;*/
 }

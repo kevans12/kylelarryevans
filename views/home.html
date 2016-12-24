@@ -1,7 +1,7 @@
-<div class="home-top">
-  <p class="HC">
+<div class="home-top" id="home">
+  <!-- <p class="HC">
     Kyle Evans
-  </p>
+  </p> -->
 </div>
 <!-- navbar -->
  <div data-spy="affix" data-offset-top="50">
@@ -14,71 +14,137 @@
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand" ui-sref="home"><img class="navlogo" alt="Evans Woodshop" src="./images/logo.jpg" /></a>
+         <a class="navbar-brand" href="#home"><img class="navlogo" alt="Kyle Evans" src="./images/kegray.png" /></a>
         </div>
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <!-- <ul class="nav navbar-nav">
         </ul> -->
        <ul class="nav navbar-nav navbar-right">
-         <li><a ui-sref="home">Home<span class="sr-only">(current)</span></a></li>
-         <li><a href="about">About</a></li>
-         <li><a href="skills">Skills</a></li>
-         <li><a href="portfolio">Portfolio</a></li>
-         <li><a href="contact">Contact</a></li>
+         <li><a href="#home">Home<span class="sr-only">(current)</span></a></li>
+         <li><a href="#about">About</a></li>
+         <li><a href="#experience">Experience</a></li>
+         <li><a href="#portfolio">Portfolio</a></li>
+         <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
   </div>
   <!-- end navbar -->
-  <div class="home-about">
+  <div class="home-about" id="about">
     <div class="home-about-intro">
       <h2>About Me</h2>
       <div class="redline"></div>
-      <p>
-        Brief Intro Text
+      <p class="about-text">
+        Hi, I'm Kyle. I'm a product manager, web developer, designer and woodworker. I love creating, innovating and finding solutions. I'm always looking for new things to learn and great people to work with.
       </p>
     </div>
     <div class="home-about-cards">
       <div class="home-about-cards-left">
-        <div class="about-card"><p>Product Manager</p></div>
-        <div class="about-card"><p>Web Developer</p></div>
+        <div class="about-card">
+          <h4>EXPERIENCE</h4>
+          <p>
+            From managing massive projects, to leading teams both large and small, I have over 10 years of experience working with large companies as well as brand new start-ups. I have experience launching multi-billion dollar funds as well as small ecommerce sites.
+          </p>
+        </div>
+        <div class="about-card">
+          <h4>KNOWLEDGE</h4>
+          <p>
+            It can be complicated in today's environment, so working with someone who knows and understands what the challenges are is more important than ever. Whether it's changing regulations, the big picture, or the details, I'm familiar with getting things done.
+          </p>
+        </div>
       </div>
       <div class="home-about-cards-right">
-        <div class="about-card"><p>Passionate Learner</p></div>
-        <div class="about-card"><p>Maker</p></div>
+        <div class="about-card">
+          <h4>ADAPTABILITY</h4>
+          <p>
+            Things change quickly, and I'm always looking to stay ahead. I am passionate about continued learning and am always looking to build on what I know. Whether it is learning new workflow methods or experimenting with new design, you can be sure that I can adapt to wherever the market is taking us.
+          </p>
+        </div>
+        <div class="about-card">
+          <h4>PASSION</h4>
+          <p>
+            I love taking on new challenges and finding solutions. My passion really lies in generating new ideas, finding better ways of doing things, and creating. Whether it is new websites and apps or larger products, there is always the opportunity to make things better.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="home-experience">
+  <div class="home-experience" id="experience">
     <div class="home-experience-header"><h2>Experience</h2></div>
     <div class="redline"></div>
     <div class="experience-cards">
       <div class="experience-card">
         <h4>Product Management</h4>
-        <p>Experienced product manager</p>
-        <img src="./images/hammer.png" />
+        <ul>
+          <li>
+            Over 6 years of experience launching new products, working with sales teams and clients, and increasing business profitability
+          </li>
+          <li>
+            Extensive experience analyzing markets and competitive landscapes
+          </li>
+          <li>
+            Experienced in measuring product success and integrating client needs
+          </li>
+        </ul>
+        <img src="./images/product_ven.png" />
       </div>
       <div class="experience-card">
         <h4>Web Development</h4>
-        <p>Experienced web developer</p>
+        <ul>
+          <li>
+            Full stack web developer
+          </li>
+          <li>
+            Experienced with HTML, CSS, Javascript, jQuery, Angular, Node, SQL
+          </li>
+          <li>
+            Successfully launched full-stack ecommerce site built with Angular, Node, Express and SQL
+          </li>
+          <li>
+            Launched various web apps from personal sites to trivia games
+          </li>
+        </ul>
         <img src="./images/computer.png" />
       </div>
       <div class="experience-card">
-        <h4>Finance</h4>
-        <p>Experienced finance</p>
+        <h4>Business Analysis</h4>
+        <ul>
+          <li>
+            Gained angel investment and other financing for over 100 small businesses through coaching and mentoring of leadership
+          </li>
+          <li>
+            Successfully have analyzied company promotion and incentive structures and implemented changes to increase employee satisifaction and advancement
+          </li>
+        </ul>
         <img src="./images/money.png" /><span></span>
       </div>
       <div class="experience-card">
-        <h4>Leader</h4>
-        <p>Experienced leader</p>
+        <h4>Leadership</h4>
+        <ul>
+          <li>
+            Have successfully led teams varying in size from 2-3 people to organizations of over 70
+          </li>
+          <li>
+            Led Salt Lake office to third place finish in SLC Corporate Games by proposing and executing office wide participation of over 40 teams in each of the past 5 years
+          </li>
+          <li>
+            Have ensured project success by mentoring and training new team members
+          </li>
+        </ul>
         <img src="./images/leader.png" />
       </div>
     </div>
+    <div class="libutton-div">
+      <a href="https://www.linkedin.com/in/kylelarryevans/"><button class="linkedin-button">View LinkedIn Profile</button></a>
+    </div>
   </div>
 
-  <div class="portfolio">
+  <div class="portfolio" id="portfolio">
    <div class="portfolio-header"><h2>Portfolio</h2></div>
    <div class="redline"></div>
+   <p class="about-text">
+     Here is a sample of a few of the projects I've worked on recently
+   </p>
   </div>
