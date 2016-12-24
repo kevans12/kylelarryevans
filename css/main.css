@@ -349,6 +349,12 @@
   margin: 5px;
   position: relative;
 }
+@media(min-width: 1000px) {
+  .portfolio-cards div {
+    width: 500px;
+    font-size: 1.1em;
+  }
+}
 .portfolio-cards img {
   max-width: 100%;
   height: auto;
