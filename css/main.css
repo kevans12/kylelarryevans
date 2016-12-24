@@ -334,9 +334,16 @@
   text-align: center;
   font-size: 1.4em;
 }
-.portfolio-cards a:hover span {
+.portfolio-cards a:hover span, a.hover span, a.hover_effect span, a:active span {
   display: block;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
+/*.portfolio-cards a.hover_effect span {
+  display: block;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}*/
 .portfolio-cards {
   display: flex;
   justify-content: center;

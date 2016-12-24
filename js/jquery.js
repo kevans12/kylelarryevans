@@ -27,4 +27,9 @@ $('a').click(function() {
     });
     return false;
  });
+ //for hovering on touchscreen
+ $('.hover').bind('touchstart touchend', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('hover_effect');
+ });
 });
