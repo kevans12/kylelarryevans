@@ -296,9 +296,10 @@
 /***************************home portfolio*******************************/
 
 .portfolio {
-  height: 550px;
+  height: auto;
   width: 100%;
   padding-top: 30px;
+  padding-bottom: 35px;
   /*display: flex;
   justify-content: center;*/
 }
@@ -306,11 +307,59 @@
   margin:10px;
   /*margin-top: 20px;*/
 }
+.home-portfolio-intro {
+  /*margin: 10px;*/
+  padding: 10px;
+  padding-top: 40px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
 .portfolio h2 {
   margin: auto;
   align-items: center;
   text-align: center;
   padding-top: 10px;
+}
+.portfolio-cards a span{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #ddd;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.4em;
+}
+.portfolio-cards a:hover span {
+  display: block;
+}
+.portfolio-cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.portfolio-cards div {
+  width: 400px;
+  height: auto;
+  margin: 5px;
+  position: relative;
+}
+.portfolio-cards img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.portfolio-cards img:hover {
+  opacity: .1;
+  display: block;
+}
+.portfolio-cards p:hover {
+  display: block;
 }
 
 /***************************home product grid*******************************/
