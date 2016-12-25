@@ -26,10 +26,10 @@ $('a').click(function() {
     return false;
  });
  //for hovering on touchscreen
- $('.hover').bind('touchstart touchend', function(e) {
-    e.preventDefault();
-    $(this).toggleClass('hover_effect');
- });
+ // $('.hover').bind('touchstart touchend', function(e) {
+ //    e.preventDefault();
+ //    $(this).toggleClass('hover_effect');
+ // });
  //to get the collapsed dropdown to close on a click
 $(".navbar-nav li a").click(function(event) {
     if (!$(this).parent().hasClass('dropdown'))
