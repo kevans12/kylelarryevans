@@ -171,7 +171,7 @@
 /***************************home experience*******************************/
 
 .home-experience {
-  background: url('../images/leaf2.jpg') no-repeat;
+  background: url('../images/leaf2.jpg') no-repeat 0 0;
   background-size: cover;
   height: auto;
   width: 100%;
