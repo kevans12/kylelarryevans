@@ -298,7 +298,7 @@
 .portfolio {
   height: auto;
   width: 100%;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 35px;
   /*display: flex;
   justify-content: center;*/
@@ -380,6 +380,43 @@
   display: block;
 }
 
+/***************************contact*******************************/
+
+.contact-section {
+  background: url('../images/pen.jpg') no-repeat;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  display: block;
+  /*margin-bottom: 40px;*/
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: column;*/
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contact-intro {
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: white;
+  /*background-color: white;
+  border-radius: 4px;
+  opacity: .8;*/
+}
+.contact h2 {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+  color: white;
+}
 
 /***************************footer*******************************/
 .footer-icons {
