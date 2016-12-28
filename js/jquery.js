@@ -6,11 +6,11 @@ $(document).ready(function() {
   //you know the position.
   $(window).scroll(function () {
 
-    if ($(window).scrollTop() > 650) {
+    if ($(window).scrollTop() > 600) {
       $('#nav_bar').addClass('navbar-fixed-top');
     }
 
-    if ($(window).scrollTop() < 651) {
+    if ($(window).scrollTop() < 601) {
       $('#nav_bar').removeClass('navbar-fixed-top');
     }
   });
