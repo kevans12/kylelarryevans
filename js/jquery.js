@@ -9,7 +9,7 @@ $(document).ready(function() {
       }, 700, function () {
           window.location.hash = href;
       });
-      return false;
+      // return false;
    });
 
   //change the integers below to match the height of your upper div, which I called
@@ -33,16 +33,17 @@ $(document).ready(function() {
  //    e.preventDefault();
  //    $(this).toggleClass('hover_effect');
  // });
+
  //to get the collapsed dropdown to close on a click
 $(".navbar-nav li a").click(function(event) {
     if (!$(this).parent().hasClass('dropdown'))
         $(".navbar-collapse").collapse('hide');
 });
 //navbar
-$("#bs-example-navbar-collapse-1 li").on("click", function() {
-    $("li").removeClass("active");
-    $(this).addClass("active");
-  });
+// $("#bs-example-navbar-collapse-1 li").on("click", function() {
+//     $("li").removeClass("active");
+//     $(this).addClass("active");
+//   });
 
 // function openProdInfo(evt, tabName) {
 //     // Declare all variables
