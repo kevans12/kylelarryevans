@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  console.log("ready");
   // scrolling to anchors
   var $root = $('html, body');
   $('a').click(function() {
@@ -8,6 +8,7 @@ $(document).ready(function() {
           scrollTop: $(href).offset().top
       }, 700, function () {
           window.location.hash = href;
+          console.log("scroll");
       });
       // return false;
    });
@@ -38,6 +39,7 @@ $(document).ready(function() {
 $(".navbar-nav li a").click(function(event) {
     if (!$(this).parent().hasClass('dropdown'))
         $(".navbar-collapse").collapse('hide');
+        console.log("hide");
 });
 //navbar
 // $("#bs-example-navbar-collapse-1 li").on("click", function() {
@@ -66,10 +68,5 @@ $(".navbar-nav li a").click(function(event) {
 //     evt.currentTarget.className += " active";
 // }
 
-//to get the collapsed dropdown to close on a click
-$(".navbar-nav li a").click(function(event) {
-    if (!$(this).parent().hasClass('dropdown'))
-        $(".navbar-collapse").collapse('hide');
- });
 
 });
