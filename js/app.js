@@ -7,6 +7,12 @@ angular.module('kyleevans', ['ui.router'])
                 controller: 'homeCtrl',
                 controllerAs: 'vm'
             })
+            .state('about',{
+                url:'/about',
+                templateUrl: "./views/about.html",
+                controller: 'homeCtrl',
+                controllerAs: 'vm'
+            })
 
         $urlRouterProvider
             .otherwise('/');

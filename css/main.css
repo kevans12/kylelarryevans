@@ -134,7 +134,7 @@
 }
 /***************************home-about*******************************/
 .home-about {
-  height: 600px;
+  height: 700px;
   width: 100%;
   /*display: flex;*/
   /*justify-content: center;
@@ -207,7 +207,31 @@
     height: auto;
   }
 }
-
+.aboutbutton-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+  padding: 10px;
+}
+.about-button {
+  margin: 10 auto;
+  width: 180px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  /*opacity: .5;*/
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  color: #b20000;
+  font-weight: bold;
+}
+.about-button:hover {
+  background-color: #b20000;
+  opacity: .8;
+  color: white;
+}
 
 /***************************home experience*******************************/
 
