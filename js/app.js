@@ -7,8 +7,8 @@ angular.module('kyleevans', ['ui.router'])
                 controller: 'homeCtrl',
                 controllerAs: 'vm'
             })
-            .state('about',{
-                url:'/about',
+            .state('aboutMe',{
+                url:'/aboutMe',
                 templateUrl: "./views/about.html",
                 controller: 'homeCtrl',
                 controllerAs: 'vm'
