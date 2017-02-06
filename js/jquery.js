@@ -1,17 +1,17 @@
 $(document).ready(function() {
   console.log("ready");
+
   // scrolling to anchors
-  var $root = $('html, body');
-  $('a').click(function() {
-      var href = $.attr(this, 'href');
-      $root.animate({
-          scrollTop: $(href).offset().top
-      }, 700, function () {
-          window.location.hash = href;
-          console.log("scroll");
-      });
-      // return false;
-   });
+  // var $root = $('html, body');
+  // $('a').click(function() {
+  //     var href = $.attr(this, 'href');
+  //     $root.animate({
+  //         scrollTop: $(href).offset().top
+  //     }, 700, function () {
+  //         window.location.hash = href;
+  //         console.log("scroll");
+  //     });
+  //  });
 
   //change the integers below to match the height of your upper div, which I called
   //banner.  Just add a 1 to the last number.  console.log($(window).scrollTop())

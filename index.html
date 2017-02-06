@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="kyleevans">
+<!-- <html ng-app="kyleevans"> -->
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +14,241 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" type="text/css" href="./css/about.css">
     <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script> -->
 
 
   </head>
-  <body>
+  <body id="home" data-spy="scroll" data-target=".navbar-fixed-top">
    <div class="main">
+     <div class="home-top" id="home">
+       <!-- <p class="HC">
+         Kyle Evans
+       </p> -->
+       <div class="keblack-image">
+         <img src="./images/keblacklarge.png" class="keblack-top"/>
+       </div>
+     </div>
+     <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" id="nav_bar" role="navigation">
+   <div class="container">
+       <div class="navbar-header page-scroll">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand page-scroll" href="#home"><img class="navlogo" alt="Evans Shops" src="./images/kegray.png" /></a>
+       </div>
 
-    <ui-view autoscroll="true"></ui-view>
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
+           <ul class="nav navbar-nav navbar-right">
+               <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+               <li class="hidden">
+                   <a class="page-scroll" href="#home"></a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#home">Home</a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#about">About</a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#experience">Experience</a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#portfolio">Portfolio</a>
+               </li>
+               <li><a class="page-scroll" href="#contact">Contact</a></li>
+               <li><a href="http://kylelarryevans.weebly.com/" target="_blank">Blog</a></li>
+           </ul>
+       </div>
+       <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container -->
+</nav>
+
+     <!-- old navbar -->
+      <!-- <div data-spy="affix" data-offset-top="50">
+        <nav class="navbar navbar-default" id="nav_bar">
+         <div class="container-fluid">
+             <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#home"><img class="navlogo" alt="Kyle Evans" src="./images/kegray.png" /></a>
+             </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="page-scroll" href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="http://kylelarryevans.weebly.com/" target="_blank">Blog</a></li>
+             </ul>
+           </div>
+         </div>
+       </nav>
+       </div> -->
+       <!-- end old navbar -->
+
+       <div class="home-about" id="about">
+         <div class="home-about-intro">
+           <h2>About Me</h2>
+           <div class="redline"></div>
+           <p class="about-text">
+             Hi, I'm Kyle. I'm a product manager, web developer, designer and woodworker. I love creating, innovating and finding solutions. I'm always looking for new things to learn and great people to work with.
+           </p>
+         </div>
+         <div class="home-about-cards">
+           <div class="home-about-cards-left">
+             <div class="about-card">
+               <h4>EXPERIENCE</h4>
+               <p>
+                 From managing massive projects, to leading teams both large and small, I have over 10 years of experience working with large companies as well as brand new start-ups. I have experience launching multi-billion dollar funds as well as small ecommerce sites.
+               </p>
+             </div>
+             <div class="about-card">
+               <h4>KNOWLEDGE</h4>
+               <p>
+                 It can be complicated in today's environment, so working with someone who knows and understands what the challenges are is more important than ever. Whether it's changing regulations, the big picture strategy, or the details of a project, I know how to get things done.
+               </p>
+             </div>
+           </div>
+           <div class="home-about-cards-right">
+             <div class="about-card">
+               <h4>ADAPTABILITY</h4>
+               <p>
+                 Things change quickly, and I'm always looking to stay ahead. I am passionate about continued learning and am always looking to build on what I know. Whether it is learning new workflow methods or experimenting with new design, you can be sure that I can adapt to wherever the market is moving.
+               </p>
+             </div>
+             <div class="about-card">
+               <h4>PASSION</h4>
+               <p>
+                 I love taking on new challenges and finding solutions. My passion really lies in creating, generating new ideas and finding better ways of doing things. Whether it is new websites and apps or larger products, I see every challenge as a new opportunity.
+               </p>
+             </div>
+           </div>
+         </div>
+         <!-- <div class="aboutbutton-div">
+           <a ui-sref="aboutMe"><button class="about-button">More About Me</button></a>
+         </div> -->
+       </div>
+
+       <div class="home-experience" id="experience">
+         <div class="home-experience-header"><h2>Experience</h2></div>
+         <div class="redline"></div>
+         <div class="experience-cards">
+           <div class="experience-card">
+             <h4>Product Management</h4>
+             <ul>
+               <li>
+                 Over 6 years of experience launching new products, working with sales teams and clients, and increasing business profitability
+               </li>
+               <li>
+                 Extensive experience analyzing markets and competitive landscapes
+               </li>
+               <li>
+                 Experienced in measuring product success and integrating client needs
+               </li>
+             </ul>
+             <img src="./images/product_ven.png" />
+           </div>
+           <div class="experience-card">
+             <h4>Web Development</h4>
+             <ul>
+               <li>
+                 Full stack web developer
+               </li>
+               <li>
+                 Experienced with HTML, CSS, Javascript, jQuery, Angular, Node, SQL
+               </li>
+               <li>
+                 Successfully launched full-stack ecommerce site built with Angular, Node, Express and SQL
+               </li>
+               <li>
+                 Launched various web apps from personal sites to trivia games
+               </li>
+             </ul>
+             <img src="./images/computer.png" />
+           </div>
+           <div class="experience-card">
+             <h4>Business Analysis</h4>
+             <ul>
+               <li>
+                 Gained angel investment and other financing for over 100 small businesses through coaching and mentoring of leadership
+               </li>
+               <li>
+                 Successfully have analyzied company promotion and incentive structures and implemented changes to increase employee satisifaction and advancement
+               </li>
+             </ul>
+             <img src="./images/money.png" /><span></span>
+           </div>
+           <div class="experience-card">
+             <h4>Leadership</h4>
+             <ul>
+               <li>
+                 Have successfully led teams varying in size from 2-3 people to organizations of over 70
+               </li>
+               <li>
+                 Led Salt Lake office to third place finish in SLC Corporate Games by proposing and executing office wide participation of over 40 teams in each of the past 5 years
+               </li>
+               <li>
+                 Have ensured project success by mentoring and training new team members
+               </li>
+             </ul>
+             <img src="./images/leader.png" />
+           </div>
+         </div>
+         <div class="libutton-div">
+           <a href="https://www.linkedin.com/in/kylelarryevans/"><button class="linkedin-button">View LinkedIn Profile</button></a>
+         </div>
+       </div>
+
+       <div class="portfolio" id="portfolio">
+        <div class="home-portfolio-intro">
+          <div class="portfolio-header"><h2>Portfolio</h2></div>
+          <div class="redline"></div>
+           <p class="about-text">
+             Here is a sample of a few of the projects I've worked on recently
+           </p>
+         </div>
+        <div class="portfolio-cards">
+          <div><a href="http://evanswoodshop.com"><img src="./images/evanswoodshop.jpg" /><span>EvansWoodshop.com is a full-stack ecommerce site I built using Angular, Node, Express and SQL. Click here to check it out.</span></a href></div>
+          <div onclick="void(0)"><a href="http://www.timeywimeytrivia.com/"><img src="./images/doctorwho.jpg" /><span>TimeyWimeyTrivia.com is a quiz app I built using Angular. Test your knowledge of Doctor Who by clicking here!</span></a href></div>
+          <div onclick="void(0)"><a href="http://www.evansshops.com/"><img src="./images/evans_shops_banner.jpg" /><span>Evans Shops is a site I put together to showcase the many different projects that the Evans Family has going on. Check it out!</span></a href></div>
+          <div><a href="https://www.gsam.com/content/gsam/us/en/advisors/fund-center/fund-finder/gs-financial-square-federal-instruments-fund.html#scType=Institutional&pvNumber=PV102500&callingPage=fundfinder"><img src="./images/fedfund.jpg" /><span>I helped launch several new products in the past year, including 3 money market funds accounting for over $800 million in assets</span></a href></div>
+          <div><a href="http://www.goldmansachs.com/gsam/glm/index.html"><img src="./images/liq.jpg" /><span>I redesigned the entire GSAM Liquidity Solutions website and created many of the pieces available there.</span></a href></div>
+          <div><a href="https://www.gsam.com/content/gsam/us/en/advisors/fund-center/fund-finder.html#&filter=SC_TYPE|Institutional, SUPER_ASSETCLASS|Money Markets$$SUPER_ASSETCLASS|Money Markets"><img src="./images/liq2.jpg" /><span>From redesigning functionality based on user feedback to testing various new features, I helped launch the new version of our mutual funds website globally.</span></a href></div>
+          <div><a href="https://www.newyorkfed.org/medialibrary/media/markets/Application_for_MMFs.doc"><img src="./images/fed_small.jpg" /><span>I completed a 2000 page document in order to secure business access to the Federal Reserve RRP Facility. (PDF)</span></a href></div>
+        </div>
+       </div>
+
+       <div class="contact-section" id="contact">
+         <div class="contact-intro">
+          <div class="portfolio-header"><h2>Contact Me</h2></div>
+          <div class="redline"></div>
+           <p class="about-text">
+            Want to get in touch? You can contact me via LinkedIn and other social media. Or click the button below to shoot me an email.
+         </p>
+         <FORM>
+           <INPUT TYPE="button" class="linkedin-button" VALUE="Contact Me" onClick="parent.location='mailto:kylelarryevans+contact@gmail.com?subject='">
+         </FORM>
+         </div>
+       </div>
+
+
+
+    <!-- <ui-view autoscroll="true"></ui-view> -->
 
     <footer>
       <div class="line"> </div>
@@ -43,8 +267,10 @@
 
 
 
- <script src="./js/jquery.js"></script>
- <script src="./js/app.js"></script>
- <script src="./js/homeCtrl.js"></script>
+  <script src="./js/jquery.js"></script>
+ <!-- <script src="./js/app.js"></script>
+ <script src="./js/homeCtrl.js"></script> -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrolling-nav.js"></script>
 </body>
 </html>
