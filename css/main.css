@@ -511,6 +511,7 @@
 .facts-text {
   margin: auto;
   color: black;
+  width: 90%;
 }
 #facts {
   color: black;
