@@ -482,6 +482,46 @@
   padding-top: 10px;
   color: white;
 }
+/***************************facts*******************************/
+.facts-section {
+  height: auto;
+}
+.facts-intro {
+  padding: 10px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  color: black;
+  /*background-color: white;
+  border-radius: 4px;
+  opacity: .8;*/
+}
+.photo-clicker {
+  width: 180px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.photo-clicker img {
+  width: 100%;
+  border-radius: 50%;
+}
+.facts-text {
+  margin: auto;
+  color: black;
+}
+#facts {
+  color: black;
+}
+#print {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.click-here {
+  font-size: .8em;
+}
 
 /***************************footer*******************************/
 .footer-icons {

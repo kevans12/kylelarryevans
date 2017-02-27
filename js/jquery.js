@@ -1,6 +1,7 @@
 $(document).ready(function() {
   console.log("ready");
 
+
   // scrolling to anchors
   // var $root = $('html, body');
   // $('a').click(function() {
