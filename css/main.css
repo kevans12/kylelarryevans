@@ -92,7 +92,7 @@
     height: auto;
   }
 }
-@media(min-width: 2000px) {
+@media(min-width: 2100px) {
   .home-top img {
     width: 15%;
     height: auto;
