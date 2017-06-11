@@ -92,6 +92,12 @@
     height: auto;
   }
 }
+@media(min-width: 2000px) {
+  .home-top img {
+    width: 15%;
+    height: auto;
+  }
+}
 .keblack-top {
   display: block;
   margin: auto;
