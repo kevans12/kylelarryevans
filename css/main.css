@@ -329,7 +329,7 @@
 .experience-card:hover h4{
   color: white;
 }
-@media(max-width: 1050px) {
+@media(max-width: 1075px) {
   .experience-cards {
     flex-wrap: wrap;
   }
@@ -349,7 +349,7 @@
   display: flex;
   justify-content: center;
   margin: 10px 0px;
-  padding: 10px;
+  padding: 20px;
 }
 .linkedin-button {
   margin: 10 auto;
