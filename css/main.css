@@ -245,10 +245,73 @@
   color: white;
 }
 
+/***************************woodworker*******************************/
+
+.home-woodworker {
+  background: url('../images/leaf_small.jpg') no-repeat;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  display: block;
+  /*margin-bottom: 40px;*/
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: column;*/
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home-woodworker-header {
+  color: white;
+  margin:10px;
+  margin-top: 20px;
+  padding-top: 40px;
+}
+.home-experience h2 {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+}
+.woodworker-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.woodworker-card {
+  width: 300px;
+  height: 450px;
+  background-color: white;
+  border-radius: 4px;
+  opacity: .8;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+}
+.woodworker-card ul {
+  text-align: left;
+  padding-left: 10px;
+}
+.woodworker-card h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.woodworker-card img {
+  width: 50px;
+  height: auto;
+  margin: auto;
+  align-self: flex-end;
+}
 
 /***************************home-about-new(writer)*******************************/
 .home-about-new {
-  height: 250px;
+  height: 375px;
   width: 100%;
   /*display: flex;*/
   /*justify-content: center;
