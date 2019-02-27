@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- <html ng-app="kyleevans"> -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Evans</title>
+    <meta name="description" content="Personal site for Kyle Evans">
+     <meta name="keywords" content="Kyle Evans, Kyle Larry Evans, personal site, product manager, woodworker">
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/about.css">
+    <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script> -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-91800412-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+  <body data-spy="scroll" data-target=".navbar-fixed-top">
+   <div class="main">
+     <div class="home-top" id="home">
+       <!-- <p class="HC">
+         Kyle Evans
+       </p> -->
+       <div class="keblack-image">
+         <img src="./images/keblacklarge.png" class="keblack-top"/>
+       </div>
+     </div>
+     <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" id="nav_bar" role="navigation">
+   <div class="container">
+       <div class="navbar-header page-scroll">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand page-scroll" href="#home"><img class="navlogo" alt="Evans Shops" src="./images/kegray.png" /></a>
+       </div>
+
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
+           <ul class="nav navbar-nav navbar-right">
+               <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+               <li class="hidden">
+                   <a class="page-scroll" href="#home"></a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#home">Home</a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#about">About</a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#experience">Experience</a>
+               </li>
+               <li>
+                   <a class="page-scroll" href="#portfolio">Portfolio</a>
+               </li>
+               <li><a class="page-scroll" href="#contact">Contact</a></li>
+               <li><a class="page-scroll" href="#facts">Fun Facts</a></li>
+               <li><a href="http://kylelarryevans.weebly.com/" target="_blank">Blog</a></li>
+           </ul>
+       </div>
+       <!-- /.navbar-collapse -->
+   </div>
+   <!-- /.container -->
+</nav>
+
+     <!-- old navbar -->
+      <!-- <div data-spy="affix" data-offset-top="50">
+        <nav class="navbar navbar-default" id="nav_bar">
+         <div class="container-fluid">
+             <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#home"><img class="navlogo" alt="Kyle Evans" src="./images/kegray.png" /></a>
+             </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="page-scroll" href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="http://kylelarryevans.weebly.com/" target="_blank">Blog</a></li>
+             </ul>
+           </div>
+         </div>
+       </nav>
+       </div> -->
+       <!-- end old navbar -->
+
+       <div class="home-about" id="about">
+         <div class="home-about-intro">
+           <h2>About Me</h2>
+           <div class="redline"></div>
+           <p class="about-text">
+             Hi, I'm Kyle! I'm a senior product manager, writer, entrepreneur, designer, developer, tinkerer and woodworker. I love creating, innovating and finding solutions. I'm always looking for new things to learn and great people to work with.
+           </p>
+         </div>
+         <div class="home-about-cards">
+           <div class="home-about-cards-left">
+             <div class="about-card">
+               <h4>EXPERIENCE</h4>
+               <p>
+                 From managing massive projects, to leading teams both large and small, I have vast experience working with large companies as well as brand new start-ups. From creating long-term strategy to launching new products - everything from custom software to multi-billion dollar funds to small ecommerce sites.
+               </p>
+             </div>
+             <div class="about-card">
+               <h4>EXECUTION</h4>
+               <p>
+                 It's not enough to have just experience and vision. The experience must be meaningful and the vision must be brought to life. And that is what I do. From inception to launch, I'm experienced with regularly launching products and updates. Iterating. Learning. Improving. Making it happen.
+               </p>
+             </div>
+           </div>
+           <div class="home-about-cards-right">
+             <div class="about-card">
+               <h4>VISION</h4>
+               <p>
+                 A good product manager sees not only what is down the road, but what is over the horizon. As I've taken on new projects throughout my career, I've driven current innovation forward while creating the strategic vision for the next 5 years. All while bringing product partners along.
+               </p>
+             </div>
+             <div class="about-card">
+               <h4>PASSION</h4>
+               <p>
+                 I love taking on new challenges and finding answers. My passion really lies in creating solutions, generating new ideas and finding better ways of doing things. Whether it is new websites and apps or larger products, I see every challenge as a new opportunity to make things better for users.
+               </p>
+             </div>
+           </div>
+         </div>
+         <!-- <div class="aboutbutton-div">
+           <a ui-sref="aboutMe"><button class="about-button">More About Me</button></a>
+         </div> -->
+       </div>
+
+       <div class="home-experience" id="experience">
+         <div class="home-experience-header"><h2>Experience</h2></div>
+         <div class="redline"></div>
+         <div class="experience-cards">
+           <div class="experience-card">
+             <h4>Product Management</h4>
+             <ul>
+               <li>
+                 Extensive experience regularly launching new products to users, leading product teams, collaborationg cross-functionally, and managing strategic initiatives
+               </li>
+               <li>
+                 Regularly lead large groups of stakeholders through prioritization and rollout planning
+               </li>
+               <li>
+                 Passionate about improving user experience, growing revenue and changing lives
+               </li>
+               <li>
+                 Experienced analyzing markets and competitive landscapes
+               </li>
+             </ul>
+             <img src="./images/product_ven.png" />
+           </div>
+           <div class="experience-card">
+             <h4>Design/Development</h4>
+             <ul>
+               <li>
+                 Experienced with user-centered design, taking the complexity out of technology
+               </li>
+               <li>
+                 Regularly lead teams and stakeholders through user story mapping and design
+               </li>
+               <li>
+                 Create mock-ups and prototypes for experiments
+               </li>
+               <li>
+                 Full stack web development experience
+               </li>
+               <li>
+                 Launched various web apps from personal sites to trivia games
+               </li>
+             </ul>
+             <img src="./images/computer.png" />
+           </div>
+           <div class="experience-card">
+             <h4>Business Analysis</h4>
+             <ul>
+               <li>
+                 Regularly perform financial and business analysis of new and ongoing projects to measure performance, create budgets and maintain executive support
+               </li>
+               <li>
+                 Created business and financial case for developement of a new assessment application, gaining buy-in and saving $3mn annually.
+               </li>
+               <li>
+                 Successfully analyzed company training and incentive structure and implemented changes to increase employee satisfaction and advancement
+               </li>
+             </ul>
+             <img src="./images/money.png" /><span></span>
+           </div>
+           <div class="experience-card">
+             <h4>Leadership</h4>
+             <ul>
+               <li>
+                 Lead and have led numerous agile development teams in the creation and release of new products and experiences to users
+               </li>
+               <li>
+                 Led Salt Lake office to third place finish in SLC Corporate Games by proposing and executing office wide participation of over 40 teams during 5 year period
+               </li>
+               <li>
+                 Regularly mentor product managers and young professionals internally and externally
+               </li>
+             </ul>
+             <img src="./images/leader.png" />
+           </div>
+         </div>
+         <div class="libutton-div">
+           <a href="https://www.linkedin.com/in/kylelarryevans/"><button class="linkedin-button">View LinkedIn Profile</button></a>
+         </div>
+       </div>
+
+       <div class="portfolio" id="portfolio">
+        <div class="home-portfolio-intro">
+          <div class="portfolio-header"><h2>Portfolio</h2></div>
+          <div class="redline"></div>
+           <p class="about-text">
+             Here is a sample of a few of the projects I've worked on recently
+           </p>
+         </div>
+        <div class="portfolio-cards">
+          <div><a href="http://evanswoodshop.com" target="_blank"><img src="./images/evanswoodshop.jpg" /><span>EvansWoodshop.com is a full-stack ecommerce site I built using Angular, Node, Express and SQL. Click here to check it out.</span></a href></div>
+          <div onclick="void(0)"><a href="http://www.timeywimeytrivia.com/" target="_blank"><img src="./images/doctorwho.jpg" /><span>TimeyWimeyTrivia.com is a quiz app I built using Angular. Test your knowledge of Doctor Who by clicking here!</span></a href></div>
+          <div onclick="void(0)"><a href="http://www.evansshops.com/" target="_blank"><img src="./images/evans_shops_banner.jpg" /><span>Evans Shops is a site I put together to showcase the many different projects that the Evans Family has going on. Check it out!</span></a href></div>
+          <div onclick="void(0)"><a href="https://projects.invisionapp.com/share/U5ACPEA8C#/screens/215866952" target="_blank"><img src="./images/EMAhome.JPG" /><span>The new assessment and evaluation system is one of the largest and most ambitious products developed by WGU. It revolutionized the experience from creation to delivery to evaluation, and I had the opportunity to help create and deliver it.</span></a href></div>
+          <div onclick="void(0)"><a href="https://invis.io/HUGE4DWVA3Q#/260930791_Artboard_1" target="_blank"><img src="./images/logbook.JPG" /><span>The WGU Logbook is a tool I helped design and create in order to better help students track their field experience. Here is a demo of what it looks like.</span></a href></div>
+          <div onclick="void(0)"><a href="https://projects.invisionapp.com/share/MJA60Z5G3#/screens/218393383" target="_blank"><img src="./images/Scheduling.JPG" /><span>As part of my push to focus on human-centered design, I led our team in reimagining the assessment scheduling process. This is a little preview.</span></a href></div>
+          <div onclick="void(0)"><a href="https://invis.io/HUGE4DWVA3Q#/286848389_1_Home" target="_blank"><img src="./images/systemcheck.png" /><span>The new WGU System Check is an awesome tool I helped create and then expand to some awesome new functionality to help students. Check out this preview</span></a href></div>
+          <div><a href="https://www.gsam.com/content/gsam/us/en/advisors/fund-center/fund-finder/gs-financial-square-federal-instruments-fund.html#scType=Institutional&pvNumber=PV102500&callingPage=fundfinder" target="_blank"><img src="./images/fedfund.jpg" /><span>I helped launch several new products in 2016, including 3 money market funds accounting for over $800 million in assets for Goldman Sachs</span></a href></div>
+          <div><a href="http://www.goldmansachs.com/gsam/glm/index.html" target="_blank"><img src="./images/liq.jpg" /><span>I redesigned the entire GSAM Liquidity Solutions website and created many of the features and pieces available there.</span></a href></div>
+          <div><a href="https://www.gsam.com/content/gsam/us/en/advisors/fund-center/fund-finder.html#&filter=SC_TYPE|Institutional, SUPER_ASSETCLASS|Money Markets$$SUPER_ASSETCLASS|Money Markets" target="_blank"><img src="./images/liq2.jpg" /><span>From redesigning functionality based on user feedback to testing various new features, I helped launch the new version of the Goldman Sachs mutual funds website globally.</span></a href></div>
+        </div>
+       </div>
+
+       <div class="contact-section" id="contact">
+         <div class="contact-intro">
+          <div class="portfolio-header"><h2>Contact Me</h2></div>
+          <div class="redline"></div>
+           <p class="about-text">
+            Want to get in touch? You can contact me via LinkedIn and other social media. Or click the button below to shoot me an email.
+         </p>
+         <FORM>
+           <INPUT TYPE="button" class="linkedin-button" VALUE="Contact Me" onClick="parent.location='mailto:kylelarryevans+contact@gmail.com?subject='">
+         </FORM>
+         </div>
+       </div>
+
+       <div class="facts-section" id="facts">
+         <div class="facts-intro">
+           <div class="portfolio-header"><h2>Fun Facts</h2></div>
+           <div class="redline"></div>
+           <div class="photo-clicker">
+             <a id="click" onclick="nextElement();"><img src="./images/kyle-click2.jpg"/></a>
+           </div>
+           <div class="facts-text">
+             <p><span id="print"></span></p>
+             <p class="click-here">Click the picture for another random fact</p>
+           </div>
+         </div>
+       </div>
+
+    <!-- <ui-view autoscroll="true"></ui-view> -->
+
+    <footer>
+      <div class="line"> </div>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/kylelarryevans/"><img class="social-icon" src="./images/facebook.png" /></a>
+        <a href="https://www.twitter.com/kylelarryevans"><img class="social-icon" src="./images/twitter.png" /></a>
+        <a href="https://www.instagram.com/kyleevans12/"><img class="social-icon" src="./images/instagram.png" /></a>
+        <a href="https://medium.com/@kylelarryevans"><img class="social-icon" src="./images/medium.png" /></a>
+        <a href="https://www.linkedin.com/in/kylelarryevans/"><img class="social-icon" src="./images/linkedin.png" /></a>
+        <a href="https://www.github.com/kevans12/"><img class="social-icon" src="./images/github.png" /></a>
+      </div>
+     </footer>
+    </div>
+    <!-- end main -->
+
+    <!-- Angular and ui-router -->
+
+
+
+
+ <!-- <script src="./js/app.js"></script>
+ <script src="./js/homeCtrl.js"></script> -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrolling-nav.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/scripts.js"></script>
+</body>
+</html>
