@@ -245,6 +245,23 @@
   color: white;
 }
 
+
+/***************************home-about-new(writer)*******************************/
+.home-about-new {
+  height: 250px;
+  width: 100%;
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: column;*/
+}
+.home-writer {
+  height: 600px;
+  width: 100%;
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: column;*/
+}
+
 /***************************home experience*******************************/
 
 .home-experience {
