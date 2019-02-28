@@ -334,6 +334,7 @@
 .experience-card h4 {
   font-size: 1.3em;
   font-weight: bold;
+  color: #b20000;
 }
 .experience-card img {
   width: 50px;
@@ -368,10 +369,10 @@
   }
   .experience-card {
     height: 375px;
-    font-size: 1em;
+    font-size: 1.1em;
   }
   .experience-card h4 {
-    font-size: 1.15em;
+    font-size: 1.2em;
   }
   .home-experience {
     height: auto;
