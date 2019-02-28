@@ -407,7 +407,7 @@
 /***************************maker*******************************/
 
 .home-maker {
-  background: url('../images/shop1.jpg') no-repeat;
+  background: url('../images/Shop1.jpg') no-repeat;
   background-size: cover;
   background-position: center center;
   height: auto;
@@ -494,7 +494,7 @@
 
 @media(max-width: 800px) {
   .home-maker {
-      background: url('../images/shop2.jpg') no-repeat;
+      background: url('../images/Shop2.jpg') no-repeat;
       background-size: cover;
       background-position: center center;
       height: auto;
