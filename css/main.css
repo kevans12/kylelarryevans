@@ -144,6 +144,32 @@
 .navlogo:hover {
   transform: scale(1.1);
 }
+
+/***************************home-about-new(writer)*******************************/
+.home-about-new {
+  height: 375px;
+  width: 100%;
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: column;*/
+}
+.home-writer {
+  height: 600px;
+  width: 100%;
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: column;*/
+}
+
+@media(max-width: 850px) {
+  .home-about-new {
+    height: auto;
+  }
+  .home-writer {
+    height: auto;
+  }
+}
+
 /***************************home-about*******************************/
 .home-about {
   height: 700px;
@@ -203,6 +229,9 @@
   .home-about {
     height: auto;
   }
+  .home-writer {
+    height: auto;
+  }
   .about-text {
     font-size: 1.2em;
   }
@@ -216,6 +245,9 @@
     height: auto;
   }
   .home-about {
+    height: auto;
+  }
+  .home-writer {
     height: auto;
   }
 }
@@ -245,85 +277,6 @@
   color: white;
 }
 
-/***************************woodworker*******************************/
-
-.home-woodworker {
-  background: url('../images/leaf_small.jpg') no-repeat;
-  background-size: cover;
-  height: auto;
-  width: 100%;
-  display: block;
-  /*margin-bottom: 40px;*/
-  /*display: flex;*/
-  /*justify-content: center;
-  flex-direction: column;*/
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.home-woodworker-header {
-  color: white;
-  margin:10px;
-  margin-top: 20px;
-  padding-top: 40px;
-}
-.home-experience h2 {
-  margin: auto;
-  align-items: center;
-  text-align: center;
-  padding-top: 10px;
-}
-.woodworker-cards {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.woodworker-card {
-  width: 300px;
-  height: 450px;
-  background-color: white;
-  border-radius: 4px;
-  opacity: .8;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.1em;
-}
-.woodworker-card ul {
-  text-align: left;
-  padding-left: 10px;
-}
-.woodworker-card h4 {
-  font-size: 1.1em;
-  font-weight: bold;
-}
-.woodworker-card img {
-  width: 50px;
-  height: auto;
-  margin: auto;
-  align-self: flex-end;
-}
-
-/***************************home-about-new(writer)*******************************/
-.home-about-new {
-  height: 375px;
-  width: 100%;
-  /*display: flex;*/
-  /*justify-content: center;
-  flex-direction: column;*/
-}
-.home-writer {
-  height: 600px;
-  width: 100%;
-  /*display: flex;*/
-  /*justify-content: center;
-  flex-direction: column;*/
-}
 
 /***************************home experience*******************************/
 
@@ -445,6 +398,135 @@
   font-weight: bold;
 }
 .linkedin-button:hover {
+  background-color: #b20000;
+  opacity: .5;
+  color: white;
+}
+
+
+/***************************maker*******************************/
+
+.home-maker {
+  background: url('../images/shop1.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: auto;
+  width: 100%;
+  display: block;
+  /*margin-bottom: 40px;*/
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: column;*/
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.home-maker-header {
+  color: white;
+  margin:10px;
+  margin-top: 20px;
+  padding-top: 40px;
+}
+.home-maker h2 {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+}
+.maker-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.maker-card {
+  width: 300px;
+  height: 450px;
+  background-color: white;
+  border-radius: 4px;
+  opacity: .8;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+}
+.maker-card ul {
+  text-align: left;
+  padding-left: 10px;
+}
+.maker-card h4 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.maker-card img {
+  width: 150px;
+  height: auto;
+  margin: auto;
+  align-self: flex-end;
+}
+
+/*.maker-card:hover {
+  background-color: #b20000;
+  opacity: .5;
+  color: white;
+}
+.maker-card:hover h4{
+  color: white;
+}*/
+@media(max-width: 1075px) {
+  .maker-cards {
+    flex-wrap: wrap;
+  }
+  .maker-card {
+    height: 375px;
+    font-size: 1em;
+  }
+  .maker-card h4 {
+    font-size: 1.2em;
+  }
+  .home-maker {
+    height: auto;
+  }
+}
+
+@media(max-width: 800px) {
+  .home-maker {
+      background: url('../images/shop2.jpg') no-repeat;
+      background-size: cover;
+      background-position: center center;
+      height: auto;
+      width: 100%;
+      display: block;
+      background-attachment: fixed;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+  }
+}
+
+.etsybutton-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+  padding: 20px;
+}
+.etsy-button {
+  margin: 10 auto;
+  width: 180px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  opacity: .5;
+  text-decoration: none;
+  outline: none;
+  text-align: center;
+  color: #b20000;
+  font-weight: bold;
+}
+.etsy-button:hover {
   background-color: #b20000;
   opacity: .5;
   color: white;
