@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyle Evans — Product Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #FAFAF8;
+      --bg-alt:       #F3F2EE;
+      --text:         #1C1B19;
+      --text-muted:   #6B6B65;
+      --accent:       #B8845A;
+      --accent-light: #F0E4D4;
+      --border:       #E5E3DE;
+      --white:        #FFFFFF;
+      --serif:        'Playfair Display', Georgia, serif;
+      --sans:         'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,250,248,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+    .nav-name {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+      text-decoration: none; color: var(--text); letter-spacing: .01em;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: .82rem; font-weight: 600; letter-spacing: .07em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--text-muted); transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── LAYOUT ──────────────────────────────────────────── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+    section { padding: 100px 0; }
+
+    .section-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 400; line-height: 1.18; margin-bottom: 20px;
+    }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 120px 0 80px;
+    }
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .hero-label {
+      font-size: .78rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5.5vw, 4.75rem);
+      font-weight: 400; line-height: 1.05; letter-spacing: -.01em;
+      margin-bottom: 24px;
+    }
+    .hero-title em { font-style: italic; color: var(--accent); }
+    .hero-desc {
+      font-size: 1.05rem; color: var(--text-muted);
+      line-height: 1.8; margin-bottom: 40px; max-width: 460px;
+    }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: 5px;
+      font-family: var(--sans); font-size: .82rem; font-weight: 600;
+      letter-spacing: .07em; text-transform: uppercase;
+      text-decoration: none; transition: all .2s; cursor: pointer; border: none;
+    }
+    .btn-primary { background: var(--text); color: var(--white); }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-secondary { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Hero stats */
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .stat-card {
+      background: var(--bg-alt); padding: 34px 26px;
+      transition: background .2s;
+    }
+    .stat-card:nth-child(1) { border-radius: 12px 0 0 0; }
+    .stat-card:nth-child(2) { border-radius: 0 12px 0 0; }
+    .stat-card:nth-child(3) { border-radius: 0 0 0 12px; }
+    .stat-card:nth-child(4) { border-radius: 0 0 12px 0; }
+    .stat-card:hover { background: var(--accent-light); }
+    .stat-num {
+      font-family: var(--serif); font-size: 2.8rem; font-weight: 500;
+      color: var(--accent); line-height: 1; margin-bottom: 8px;
+    }
+    .stat-num sup { font-size: 1.4rem; }
+    .stat-lbl { font-size: .8rem; font-weight: 500; color: var(--text-muted); line-height: 1.45; }
+
+    /* ── ABOUT ───────────────────────────────────────────── */
+    #about { background: var(--bg-alt); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.45fr;
+      gap: 80px; align-items: start;
+    }
+    .about-sticky { position: sticky; top: 100px; }
+    .pullquote {
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      padding: 22px 26px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 32px;
+    }
+    .pullquote p {
+      font-family: var(--serif); font-size: 1.05rem;
+      font-style: italic; line-height: 1.6; margin: 0;
+    }
+    .about-body p {
+      font-size: 1rem; color: var(--text-muted);
+      line-height: 1.85; margin-bottom: 18px;
+    }
+    .about-body p:last-child { margin-bottom: 0; }
+    .about-body strong { color: var(--text); font-weight: 500; }
+
+    /* ── WHAT I DO ───────────────────────────────────────── */
+    #what-i-do { background: var(--bg); }
+    .wid-header { max-width: 600px; margin-bottom: 56px; }
+    .wid-header p { font-size: 1.05rem; color: var(--text-muted); }
+    .cards-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .card {
+      background: var(--bg-alt); border-radius: 12px;
+      padding: 38px 30px;
+      transition: transform .22s, box-shadow .22s;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,.07); }
+    .card-icon {
+      width: 46px; height: 46px; background: var(--accent-light);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.3rem; margin-bottom: 22px;
+    }
+    .card-title {
+      font-family: var(--serif); font-size: 1.25rem;
+      font-weight: 500; margin-bottom: 10px;
+    }
+    .card-text { font-size: .93rem; color: var(--text-muted); line-height: 1.72; }
+
+    /* ── CASE STUDIES ────────────────────────────────────── */
+    #case-studies { background: var(--bg-alt); }
+    .cs-header { max-width: 560px; margin-bottom: 56px; }
+
+    .case-study {
+      background: var(--white); border-radius: 16px;
+      overflow: hidden; margin-bottom: 28px;
+      transition: box-shadow .22s;
+    }
+    .case-study:last-child { margin-bottom: 0; }
+    .case-study:hover { box-shadow: 0 8px 36px rgba(0,0,0,.08); }
+
+    .cs-top {
+      padding: 46px 46px 0;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 40px; align-items: start;
+    }
+    .cs-meta {
+      display: flex; align-items: center;
+      gap: 12px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .cs-tag {
+      font-size: .73rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--accent);
+      background: var(--accent-light); padding: 4px 12px; border-radius: 20px;
+    }
+    .cs-co { font-size: .82rem; font-weight: 500; color: var(--text-muted); }
+    .cs-title {
+      font-family: var(--serif); font-size: 1.65rem;
+      font-weight: 500; line-height: 1.25; margin-bottom: 14px;
+    }
+    .cs-summary { font-size: .98rem; color: var(--text-muted); line-height: 1.72; max-width: 620px; }
+
+    .cs-badge {
+      text-align: center; background: var(--accent-light);
+      border-radius: 12px; padding: 26px 22px; min-width: 148px;
+    }
+    .cs-badge-num {
+      font-family: var(--serif); font-size: 2.4rem; font-weight: 500;
+      color: var(--accent); line-height: 1; margin-bottom: 8px;
+    }
+    .cs-badge-lbl { font-size: .78rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
+
+    .cs-divider { height: 1px; background: var(--border); margin: 0 46px; }
+
+    .cs-toggle {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 46px 18px;
+      background: none; border: none; cursor: pointer;
+      font-family: var(--sans); font-size: .84rem; font-weight: 600;
+      letter-spacing: .04em; color: var(--text-muted);
+      transition: color .2s; width: 100%; text-align: left;
+    }
+    .cs-toggle:hover { color: var(--accent); }
+    .cs-toggle-icon {
+      width: 20px; height: 20px; border: 1.5px solid currentColor;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: .95rem; font-weight: 400;
+      transition: transform .3s; flex-shrink: 0;
+    }
+    .cs-toggle.open .cs-toggle-icon { transform: rotate(45deg); }
+
+    .cs-expandable { max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+    .cs-expandable.open { max-height: 3000px; }
+
+    .cs-body { padding: 36px 46px 46px; }
+    .cs-body h4 {
+      font-size: .73rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 10px; margin-top: 26px;
+    }
+    .cs-body h4:first-child { margin-top: 0; }
+    .cs-body p { font-size: .96rem; color: var(--text-muted); line-height: 1.78; }
+    .cs-body p + p { margin-top: 12px; }
+    .cs-body strong { color: var(--text); font-weight: 600; }
+
+    /* ── CONNECT ─────────────────────────────────────────── */
+    #connect { background: var(--bg); }
+    .connect-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .connect-left .section-title { margin-bottom: 16px; }
+    .connect-left > p { font-size: 1.03rem; color: var(--text-muted); line-height: 1.78; margin-bottom: 36px; }
+
+    .link-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .link-list a {
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none; color: var(--text); font-size: .94rem;
+      font-weight: 500; padding: 15px 18px;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      transition: all .2s;
+    }
+    .link-list a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .link-icon { font-size: 1.1rem; width: 26px; text-align: center; }
+    .link-arrow { margin-left: auto; font-size: .82rem; font-weight: 400; color: var(--text-muted); }
+
+    .interests-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .interests-title {
+      font-family: var(--serif); font-size: 1.75rem;
+      font-weight: 400; margin-bottom: 18px;
+    }
+    .interests-body { font-size: .97rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 26px; }
+    .hobbies-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+    .hobby {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px; background: var(--bg-alt);
+      border-radius: 8px; font-size: .88rem; font-weight: 500;
+      color: var(--text-muted);
+    }
+    .hobby-emoji { font-size: 1.1rem; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--text); color: var(--white);
+      padding: 40px 0;
+    }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+    .footer-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; }
+    .footer-sub { font-size: .8rem; color: rgba(255,255,255,.4); }
+
+    /* ── SCROLL REVEAL ───────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links { gap: 20px; }
+      .container { padding: 0 24px; }
+      section { padding: 72px 0; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-sticky { position: static; }
+
+      .cards-grid { grid-template-columns: 1fr; gap: 14px; }
+
+      .cs-top { grid-template-columns: 1fr; }
+      .cs-top, .cs-body, .cs-toggle { padding-left: 26px; padding-right: 26px; }
+      .cs-top { padding-top: 32px; }
+      .cs-divider { margin: 0 26px; }
+      .cs-badge { display: flex; align-items: center; gap: 18px; text-align: left; }
+
+      .connect-grid { grid-template-columns: 1fr; gap: 52px; }
+
+      .footer-inner { flex-direction: column; gap: 10px; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero-title { font-size: 2.8rem; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-name">Kyle Evans</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#what-i-do">Work</a></li>
+    <li><a href="#case-studies">Case Studies</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div>
+        <p class="hero-label">Product Leader &amp; Builder</p>
+        <h1 class="hero-title">Kyle<br><em>Evans</em></h1>
+        <p class="hero-desc">
+          Nearly fifteen years building products, teams, and organizations
+          that create real impact. I lead with curiosity, craft with intention,
+          and ship with grit.
+        </p>
+        <div class="hero-cta">
+          <a href="#case-studies" class="btn btn-primary">View My Work</a>
+          <a href="https://www.linkedin.com/in/kylelarryevans/" target="_blank" class="btn btn-secondary">Let's Connect</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-num">15<sup>yr</sup></div>
+          <div class="stat-lbl">Product Leadership Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">400<sup>%</sup></div>
+          <div class="stat-lbl">User Adoption Increase at HealthEquity</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-lbl">Product Orgs Built from the Ground Up</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-lbl">Prototypes — and some occasional firewood</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-sticky reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">A product leader who thinks like a woodworker</h2>
+        <div class="pullquote">
+          <p>"Woodworking requires incredible patience, persistence, and experimentation. You rarely get details right the first time — and some occasional firewood."</p>
+        </div>
+      </div>
+
+      <div class="about-body reveal">
+        <p>
+          I'm a <strong>proven product management leader</strong> with nearly fifteen years of experience
+          launching new products, building and leading cross-functional teams, and driving successful outcomes.
+          I focus on developing talent, creating superb UX, and fostering strategic creativity.
+        </p>
+        <p>
+          I'm a skilled storyteller with experience as a writer, podcaster, and mentor. I'm experienced
+          in developing and owning <strong>product vision, strategy, and roadmap</strong> for mobile,
+          web, and SaaS products.
+        </p>
+        <p>
+          I see myself as a woodworker both in my shop and outside of it — continually curious about
+          new and better ways of doing things. I have several books on my shelf dedicated to wood
+          finishes. I'm constantly reading and learning, applying new methods and thinking deeply about
+          what's in the works or yet to come.
+        </p>
+        <p>
+          I love creating amazing work and have the <strong>patience and grit</strong> to get there —
+          whether a kitchen table, an original piece of software, or building a new team. Nothing worth
+          doing is easy. One of my core strengths is seeing tasks through, persisting through the
+          difficulties, and delivering results.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT I DO ──────────────────────────────────────── -->
+<section id="what-i-do">
+  <div class="container">
+    <div class="wid-header reveal">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title">Building teams and products that last</h2>
+      <p>I establish new product organizations and build powerful teams where they haven't existed before — in new locations, new divisions, and new companies.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal">
+        <div class="card-icon">🧭</div>
+        <h3 class="card-title">Leading Teams</h3>
+        <p class="card-text">I've recruited, built, and led product development teams — including product managers, designers, and business analysts — for a range of high-impact initiatives.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">✦</div>
+        <h3 class="card-title">Creating Experiences</h3>
+        <p class="card-text">From billion-dollar mutual funds to next-gen online education, I've helped design and implement game-changing products that put the human experience at the center.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">⬡</div>
+        <h3 class="card-title">Building Organizations</h3>
+        <p class="card-text">I've established product teams and product orgs at Goldman Sachs, Western Governors University, Clearlink, and beyond — from nothing to fully functional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDIES ───────────────────────────────────── -->
+<section id="case-studies">
+  <div class="container">
+
+    <div class="cs-header reveal">
+      <p class="section-label">Case Studies</p>
+      <h2 class="section-title">Work that moved the needle</h2>
+    </div>
+
+    <!-- Case Study 1 -->
+    <div class="case-study reveal">
+      <div class="cs-top">
+        <div>
+          <div class="cs-meta">
+            <span class="cs-tag">UX &amp; Data</span>
+            <span class="cs-co">HealthEquity</span>
+          </div>
+          <h3 class="cs-title">Using Data to Fix User Onboarding for HSA Investments</h3>
+          <p class="cs-summary">
+            A data-driven redesign of the investment onboarding flow — combining quantitative analytics
+            with qualitative user research — that resulted in a 400% increase in adoption and a 25%
+            increase in initial investments.
+          </p>
+        </div>
+        <div class="cs-badge">
+          <div class="cs-badge-num">400%</div>
+          <div class="cs-badge-lbl">Increase in<br>user adoption</div>
+        </div>
+      </div>
+      <div class="cs-divider"></div>
+      <button class="cs-toggle" onclick="toggleCS(this)">
+        <span class="cs-toggle-icon">+</span>
+        Read Full Case Study
+      </button>
+      <div class="cs-expandable">
+        <div class="cs-body">
+          <h4>Background</h4>
+          <p>Once HealthEquity HSA members save a certain amount in their health savings accounts,
+          they can invest the additional funds in a variety of mutual funds. As a product team, we
+          knew from analytics that a significant number of users didn't complete investment onboarding
+          — and we needed to fix this to grow our investment users and help members maximize the
+          benefits of their HSA.</p>
+
+          <h4>Process</h4>
+          <p>I used both qualitative and quantitative data to create a significantly better
+          investment onboarding experience. When I joined the role, we knew the experience was clunky
+          and outdated, but didn't know where to focus. I started by analyzing the user flow from
+          our existing instrumentation. I noticed a <strong>50% drop-off at one point</strong> in
+          the onboarding process, and another where roughly <strong>75% of users fell out</strong>.
+          That gave me the context to dive deeper.</p>
+          <p>I started by watching actual users go through the onboarding flow without interfering —
+          I wanted to see the process from their point of view. After a series of user interviews,
+          I had a clearer picture of the problems: being overwhelmed by choices, unfamiliarity with
+          investing, and fear of committing. I worked with our UX team to design new user flows,
+          mocked them up in Invision, and spent several days onsite with customers walking through
+          our prototypes.</p>
+
+          <h4>Key Insight</h4>
+          <p>We were presenting users with too many choices too early. Right at the start, we asked
+          them to pick between three investment guidance modes — <em>Auto Pilot</em>, <em>GPS</em>,
+          or <em>Self Driven</em> — before they fully understood their own needs or preferences.
+          This caused immediate drop-off and confusion.</p>
+
+          <h4>Solution</h4>
+          <p>Rather than front-loading three options, we needed to guide users through the process.
+          This meant simplifying decisions at each step, segmenting users along the way to route them
+          down the right path, and adjusting the pricing structure to match. I made the pitch to our
+          investment team, sales, marketing, and stakeholders — using the quantitative data and
+          qualitative feedback to demonstrate the need for change. We moved forward with additional
+          testing sessions and released the first iteration, consolidating choices and removing friction.</p>
+
+          <h4>Results</h4>
+          <p>We saw an initial increase of adoption of <strong>400%</strong> as users were able to
+          more easily complete the onboarding flow. We also saw a <strong>25% increase in initial
+          investments</strong> as fewer users dropped out before getting their HSAs invested.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 2 -->
+    <div class="case-study reveal">
+      <div class="cs-top">
+        <div>
+          <div class="cs-meta">
+            <span class="cs-tag">Greenfield Build</span>
+            <span class="cs-co">Western Governors University</span>
+          </div>
+          <h3 class="cs-title">Creating and Launching a Greenfield Application at Scale</h3>
+          <p class="cs-summary">
+            Led the conception, design, and university-wide launch of EMA — a three-in-one
+            evaluation management platform built from scratch to serve a 100,000+ student
+            university and eventually other institutions.
+          </p>
+        </div>
+        <div class="cs-badge">
+          <div class="cs-badge-num">🎓</div>
+          <div class="cs-badge-lbl">University-wide<br>platform launch</div>
+        </div>
+      </div>
+      <div class="cs-divider"></div>
+      <button class="cs-toggle" onclick="toggleCS(this)">
+        <span class="cs-toggle-icon">+</span>
+        Read Full Case Study
+      </button>
+      <div class="cs-expandable">
+        <div class="cs-body">
+          <h4>Background</h4>
+          <p>As Western Governors University grew, it became clear that off-the-shelf technology
+          could no longer serve its unique competency-based education model. WGU built out a product
+          management organization — which I was among the first to join — and I had the opportunity
+          to both help shape that org and lead one of its flagship initiatives: the Evaluation
+          Management Application (EMA).</p>
+
+          <h4>What We Built</h4>
+          <p>EMA was three applications in one. First, an <strong>assessment creation and publishing
+          platform</strong> for faculty to author and publish assessments to the system. Second, a
+          fully integrated <strong>student-facing experience</strong> embedded directly into the WGU
+          student portal — seamless and requiring no external portals or vendor logins. Third, an
+          <strong>evaluator platform</strong> where faculty graders could receive, evaluate, and
+          return submitted exams efficiently. With one of the largest evaluator faculty groups at
+          WGU, maximizing their time was critical.</p>
+
+          <h4>Start Small, Scale Fast</h4>
+          <p>We began testing with just one exam, one class of 13 students, and a single evaluator.
+          This meant doing significant manual work "behind the curtain" early on — but the lessons
+          learned allowed us to scale dramatically over the following months as more colleges,
+          departments, students, and evaluators came on board.</p>
+
+          <h4>The Architectural Pivot</h4>
+          <p>Early on, we chose Cassandra (a non-relational database) based on available team
+          expertise. As we scaled, performance issues emerged around unmanaged database tombstones —
+          and our Cassandra expert departed. Combined with an organizational push to migrate to AWS,
+          we made the strategic decision to move to Aurora. This required a near-complete application
+          rewrite and full data migration, pausing all feature development. I led the team through
+          scoping, stakeholder communication, and execution. We completed the migration aligned with
+          our conservative timeline.</p>
+
+          <h4>Launch</h4>
+          <p>The rollout was a multi-phased effort involving every department at the university.
+          I navigated competing pressures — speed vs. change management — and worked closely across
+          groups, adjusting timelines as needed. We hit our key goal of <strong>launching to the full
+          university on schedule</strong>, and eventually onboarded other institutions onto the
+          platform as well.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 3 -->
+    <div class="case-study reveal">
+      <div class="cs-top">
+        <div>
+          <div class="cs-meta">
+            <span class="cs-tag">Product Strategy</span>
+            <span class="cs-co">OpenSpace</span>
+          </div>
+          <h3 class="cs-title">Leading the Creation of Product Principles and Tenets</h3>
+          <p class="cs-summary">
+            As the product org scaled, decision-making had become centralized and slow. I led the
+            team through a structured workshop process to surface tensions, vote on priorities, and
+            craft 10 shared product principles — empowering the team to move faster with alignment.
+          </p>
+        </div>
+        <div class="cs-badge">
+          <div class="cs-badge-num">10</div>
+          <div class="cs-badge-lbl">Product Principles<br>established</div>
+        </div>
+      </div>
+      <div class="cs-divider"></div>
+      <button class="cs-toggle" onclick="toggleCS(this)">
+        <span class="cs-toggle-icon">+</span>
+        Read Full Case Study
+      </button>
+      <div class="cs-expandable">
+        <div class="cs-body">
+          <h4>The Problem</h4>
+          <p>At OpenSpace, I quickly realized we needed a better way to scale decision-making and
+          ensure that teams and product managers were empowered to act without getting slowed down
+          by unnecessary meetings or escalations. The core issue: many decisions had long been
+          centralized with a few executives. As the company grew, so did the product and engineering
+          team — and we needed a way to move fast without sacrificing on core principles everyone
+          agreed on.</p>
+
+          <h4>The Workshop Process</h4>
+          <p>I led our team through a series of structured exercises to surface where we were
+          currently making decisions, what we actually valued based on our behavior, and where our
+          most urgent pain points were. Once we identified the key tensions, we had an open
+          discussion about where they most frequently appeared in our product work.</p>
+          <p>From there, I asked everyone to write out the tensions they experienced and post
+          them on sticky notes. We grouped similar ideas, then plotted opposing ideas on continuums
+          — forcing us to pick a side. For example: <em>Should our product prioritize simplicity for
+          new users, or depth for power users?</em> We created around 16 continuums and had the
+          team vote with dots, revealing exactly where consensus existed and where it didn't.</p>
+
+          <h4>Crafting the Principles</h4>
+          <p>I led the team in a discussion on each continuum, drawing out reasoning from anyone
+          who voted at the extremes or where outliers appeared. I then synthesized the conversation
+          and voting patterns into 10 clear product principles and tenets, which were reviewed with
+          leadership to build broader buy-in before implementation.</p>
+
+          <h4>The 10 Principles</h4>
+          <p><strong>1.</strong> We value simplicity over robustness, and prioritize new and less
+          tech-savvy users over power users.<br>
+          <strong>2.</strong> We are prescriptive — we take a stand for what's best for our product
+          and users.<br>
+          <strong>3.</strong> We value speed: move fast to beta, but confidently to full release.<br>
+          <strong>4.</strong> We are building a holistic solution — one answer to many problems
+          over many answers to many problems.<br>
+          <strong>5.</strong> We build for self-service — customers should never need our help to
+          use our product.<br>
+          <strong>6.</strong> We prioritize the user and their experience over our own business
+          needs or the purchaser.<br>
+          <strong>7.</strong> We integrate broadly — building so users can move fluidly between
+          OpenSpace and other tools in their workflow.<br>
+          <strong>8.</strong> We prioritize for highest value, though not for any single customer
+          or small group.<br>
+          <strong>9.</strong> We prioritize long-term over short-term and are proactive rather
+          than reactive.<br>
+          <strong>10.</strong> We validate our assumptions — using qualitative and quantitative
+          data to make decisions.</p>
+
+          <h4>Outcome</h4>
+          <p>These principles became a living document, revisited and refined periodically as the
+          team experimented with them and gathered feedback. They gave the product organization
+          a shared language for decision-making and reduced the need for escalation — freeing teams
+          to move with speed and confidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 4 -->
+    <div class="case-study reveal">
+      <div class="cs-top">
+        <div>
+          <div class="cs-meta">
+            <span class="cs-tag">A/B Testing &amp; UX</span>
+            <span class="cs-co">Clearlink</span>
+          </div>
+          <h3 class="cs-title">A/B Testing UX Changes to Nearly Double Conversions</h3>
+          <p class="cs-summary">
+            Expanded Clearlink's A/B testing program from copy and images into full user-flow
+            experimentation — simplifying a multi-step funnel by over two-thirds and nearly
+            doubling conversions with statistical significance (p = 0.01).
+          </p>
+        </div>
+        <div class="cs-badge">
+          <div class="cs-badge-num">2×</div>
+          <div class="cs-badge-lbl">Conversion rate<br>increase</div>
+        </div>
+      </div>
+      <div class="cs-divider"></div>
+      <button class="cs-toggle" onclick="toggleCS(this)">
+        <span class="cs-toggle-icon">+</span>
+        Read Full Case Study
+      </button>
+      <div class="cs-expandable">
+        <div class="cs-body">
+          <h4>Background</h4>
+          <p>At Clearlink, our product organization worked closely with marketing partners to build
+          products, test ideas, and drive better business outcomes. While we regularly ran A/B tests
+          on copy and images, I wanted to expand that methodology to test actual user flows and
+          experiences. This was a bigger lift — more development work, more stakeholder buy-in —
+          but I was confident that <strong>better experience design, not just better wording,
+          would move the needle</strong>.</p>
+
+          <h4>The Hypothesis</h4>
+          <p>We targeted an online retail site that gathered user information and funneled visitors
+          toward either signing up online or calling to purchase. Our hypothesis: by simplifying the
+          user flow and eliminating over two-thirds of the steps between first action and purchasing
+          decision, we could significantly increase conversions by reducing friction and demanding
+          less of potential customers.</p>
+
+          <h4>Building Buy-In</h4>
+          <p>We created prototypes, reviewed designs, and spent significant time preparing
+          stakeholders at a large telecommunications partner that was resistant to change. This
+          groundwork was essential — not just for getting approval to run the test, but for ensuring
+          the partner would let the test run its full course without stopping early based on early
+          (and potentially misleading) results.</p>
+
+          <h4>Running the Test</h4>
+          <p>We ran a two-week test, randomly assigning visitors to either the original experience
+          or our redesigned flow, while tracking unique users to maintain consistent experiences for
+          return visitors. We used the same rigor applied to our marketing A/B tests: a full
+          testing window, appropriate confidence intervals, and a pre-set significance threshold
+          (p = 0.05) to avoid the temptation of stopping early due to noisy early results.</p>
+
+          <h4>Results</h4>
+          <p>The results exceeded our expectations. We achieved a <strong>p-value of 0.01</strong>
+          — well beyond our threshold — with conversions <strong>nearly doubling</strong> on the
+          redesigned experience versus the original. This wasn't just a win for that one site. It
+          validated the broader case I was making internally: that investing in UX design — not
+          just copy or aesthetics, but the entire user journey — delivers measurable, significant
+          business value. I used this result as a proof point in conversations with other partners
+          and internal stakeholders for years afterward.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study 5 -->
+    <div class="case-study reveal">
+      <div class="cs-top">
+        <div>
+          <div class="cs-meta">
+            <span class="cs-tag">Vision &amp; Strategy</span>
+            <span class="cs-co">Teem</span>
+          </div>
+          <h3 class="cs-title">Creating a Product Vision and Strategy for Teem</h3>
+          <p class="cs-summary">
+            Following two acquisitions, Teem needed a clear direction. I developed a full market,
+            user, and competitive analysis — then crafted a product vision, positioning, and strategy
+            to focus the team and align the company within a private equity portfolio.
+          </p>
+        </div>
+        <div class="cs-badge">
+          <div class="cs-badge-num">🧭</div>
+          <div class="cs-badge-lbl">Vision, positioning<br>&amp; strategy defined</div>
+        </div>
+      </div>
+      <div class="cs-divider"></div>
+      <button class="cs-toggle" onclick="toggleCS(this)">
+        <span class="cs-toggle-icon">+</span>
+        Read Full Case Study
+      </button>
+      <div class="cs-expandable">
+        <div class="cs-body">
+          <h4>Background</h4>
+          <p>As Teem was acquired first by iOffice and then by SIQ, it was critical to establish
+          a cohesive product vision and strategy — defining Teem's positioning within the market,
+          against competitors, and across the portfolio of companies in the organization. I
+          developed a comprehensive analysis and then socialized it broadly to build alignment and
+          support.</p>
+
+          <h4>Understanding the Market</h4>
+          <p>I started with the macro context: companies and employees were gradually returning to
+          offices in the wake of COVID-19, but the longer-term picture was a permanent mix of
+          remote, hybrid, and in-office work. Understanding this landscape was essential for
+          crafting a vision that was relevant both immediately and durable over time.</p>
+
+          <h4>Understanding Our Users</h4>
+          <p>Next, I focused on users — their immediate needs as they returned to offices, and
+          their longer-term needs as work patterns continued to evolve. Teem had always been built
+          with the employee experience first, making it notably easier and more intuitive than
+          competitors who had started from the administrative side and were now moving toward
+          employee-facing features. That was a key differentiator worth protecting and extending.</p>
+
+          <h4>Competitive Landscape</h4>
+          <p>I mapped Teem's history and competitive position — both against direct competitors and
+          against adjacent solutions entering the space. While other players were expanding from
+          admin tools into employee experience, Teem was moving in the opposite direction: from
+          strong employee UX toward richer administrative capabilities. This created a clear
+          positioning opportunity: <strong>the platform that was built for people first</strong>.</p>
+
+          <h4>Vision, Positioning &amp; Strategy</h4>
+          <p>With a thorough understanding of the market, users, competitors, and company
+          challenges, I crafted a product vision that addressed key user needs, leveraged Teem's
+          strengths, and focused efforts on the most important experiences for the new work
+          environment. I also defined our product positioning within the broader PE portfolio —
+          clarifying where Teem fit and where it didn't — and developed a product strategy to
+          guide prioritization of existing and new development.</p>
+
+          <h4>Outcome</h4>
+          <p>With a vision and strategy in place, the team was able to focus development efforts,
+          prioritize new features correctly, and communicate a clear direction to leadership,
+          partners, and the broader organization. It was the beginning of a much firmer and more
+          confident direction for Teem.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONNECT ────────────────────────────────────────── -->
+<section id="connect">
+  <div class="container">
+    <div class="connect-grid">
+
+      <div class="reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Let's connect and chat</h2>
+        <p>
+          Whether you're looking for a product leader, want to talk shop about UX,
+          are curious about woodworking, or just want to connect — I'd love to hear from you.
+        </p>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.linkedin.com/in/kylelarryevans/" target="_blank">
+              <span class="link-icon">💼</span>
+              LinkedIn
+              <span class="link-arrow">Connect →</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.productthinking.cc/" target="_blank">
+              <span class="link-icon">✉️</span>
+              Product Thinking Newsletter
+              <span class="link-arrow">Subscribe →</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.prodity.co/podcast" target="_blank">
+              <span class="link-icon">🎙️</span>
+              Prodity Podcast
+              <span class="link-arrow">Listen →</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.etsy.com/shop/evanswoodshopco" target="_blank">
+              <span class="link-icon">🪵</span>
+              Evans Woodshop Co.
+              <span class="link-arrow">Shop →</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <p class="interests-label">Beyond Product</p>
+        <h3 class="interests-title">Hobbies &amp; interests</h3>
+        <p class="interests-body">
+          I'm passionate about learning and constantly developing new skills.
+          A few things I love outside the office:
+        </p>
+        <div class="hobbies-grid">
+          <div class="hobby"><span class="hobby-emoji">🪵</span> Woodworking</div>
+          <div class="hobby"><span class="hobby-emoji">✍️</span> Writing</div>
+          <div class="hobby"><span class="hobby-emoji">🎙️</span> Podcasting</div>
+          <div class="hobby"><span class="hobby-emoji">⛷️</span> Skiing</div>
+          <div class="hobby"><span class="hobby-emoji">📷</span> Photography</div>
+          <div class="hobby"><span class="hobby-emoji">🖨️</span> 3D Printing</div>
+          <div class="hobby"><span class="hobby-emoji">⌚</span> Horology</div>
+          <div class="hobby"><span class="hobby-emoji">📚</span> Reading</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Kyle Evans</span>
+      <span class="footer-sub">Product Leader · Builder · Woodworker</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 60);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Case study expand/collapse
+  function toggleCS(btn) {
+    const expandable = btn.nextElementSibling;
+    const isOpen = expandable.classList.contains('open');
+    expandable.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    const icon = btn.querySelector('.cs-toggle-icon');
+    icon.textContent = isOpen ? '+' : '×';
+    // Update label text node
+    const textNode = [...btn.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (textNode) textNode.textContent = isOpen ? ' Read Full Case Study' : ' Close Case Study';
+  }
+</script>
+
+</body>
+</html>
